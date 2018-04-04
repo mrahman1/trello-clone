@@ -1,4 +1,3 @@
-
 let taskId = 1;
 
 class Task {
@@ -9,5 +8,10 @@ class Task {
     taskId++
   }
 
+  render(){
+    return(
+      `<li data-id="${this.id}"> Task: ${this.description} </li>`
+    )
+  }
 
 }

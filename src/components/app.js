@@ -32,10 +32,20 @@ class App {
   }
 
   handleSubmitTask(event){
+    event.preventDefault();
+    console.log('in submit task')
     if (event.target.className === "create-task-form"){
-      event.preventDefault();
-      console.log('in submit task')
-    }
+      console.log('IN HANDLE SUBMIT TASK', event.target)
+      let target = event.target;
+      let parent = target.parentElement
+      let parentId = parent.getAttribute('data-id');
+      console.log('PARENT',parentId)
+      }
+  }
+
+  createTask(description){
+    let newTask = new Task(description)
+    this.render()
   }
 
 

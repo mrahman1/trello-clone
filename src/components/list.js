@@ -16,7 +16,7 @@ class List{
     // let newTaskForm =
 
     return(`
-        <div class = "list-card"/>
+        <div class = "list-card"  data-id="${this.id}"/>
           <h1> BEHOLD: LIST CARD </h1>
           <p> List Title: ${this.title} </p>
 
