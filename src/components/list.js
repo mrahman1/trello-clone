@@ -9,16 +9,14 @@ class List{
   }
 
   render(){
-    // let div = document.createElement('DIV')
-    // div.className = "list-card"
-    // let title = `<p> List Title: ${this.title} </p>`
-    // div.innerHTML = title
-    // let newTaskForm =
 
     return(`
         <div class = "list-card"  data-id="${this.id}"/>
-          <h1> BEHOLD: LIST CARD </h1>
-          <p> List Title: ${this.title} </p>
+          <h3> ${this.title} </h3>
+
+          <ul>
+             ${this.renderAllTasks()}
+          </ul>
 
           <form class="create-task-form">
             <input type="text" placeholder="Add a Task"/>
@@ -27,4 +25,8 @@ class List{
         </div>
       `)
   }
+
+  renderAllTasks() { //returns a large string of HTML
+       return this.tasks.map(task => task.render()).join("")
+     }
 }

@@ -1,9 +1,8 @@
 let taskId = 1;
 
 class Task {
-  constructor(listId, description){
+  constructor(description){
     this.description = description;
-    this.listId = listId;
     this.id = taskId;
     taskId++
   }

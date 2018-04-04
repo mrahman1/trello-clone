@@ -33,19 +33,24 @@ class App {
 
   handleSubmitTask(event){
     event.preventDefault();
-    console.log('in submit task')
+    let target = event.target;
+    let taskDescription = target.childNodes[1].value
+    let parentId = parseInt(target.parentElement.getAttribute('data-id'));
+    let parent = document.getElementById(parentId)
+
     if (event.target.className === "create-task-form"){
-      console.log('IN HANDLE SUBMIT TASK', event.target)
-      let target = event.target;
-      let parent = target.parentElement
-      let parentId = parent.getAttribute('data-id');
-      console.log('PARENT',parentId)
+      console.log("DESCRIPTION", taskDescription)
+      const newTask = this.createTask(taskDescription)
+      console.log('new Task: ', newTask)
+      const parentList = this.lists.find(list => list.id == parentId)
+      console.log(newTask)
+      parentList.tasks.push(newTask) //.push() that onto the correct list
+      this.render()
       }
   }
 
   createTask(description){
-    let newTask = new Task(description)
-    this.render()
+    return new Task(description)
   }
 
 
