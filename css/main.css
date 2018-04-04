@@ -1,5 +1,6 @@
 body{
-  background-color: blue;
+  background-color: rgb(0, 121, 191);
+  font-size: 62.5%;
 }
 
 .create-task-form{
@@ -11,4 +12,21 @@ body{
 
 .list-card{
   background-color: red;
+}
+
+.add-list-wrapper {
+    height: auto;
+    width: 270px;
+    min-height: 30px;
+    padding: 4px;
+    border-radius: 3px;
+    background-color: #e2e4e6;
+  }
+
+.add-button{
+  background-color: #5aac44;
+  color: white;
+  text-align: center;
+  padding: 5px 16px;
+  border-radius: 4px;
 }
